@@ -1,0 +1,20 @@
+name: SquareMarkerZ
+version: '${version}'
+main: dev.squaremarkerz.SquareMarkerZPlugin
+api-version: '26.3'
+author: jakub
+description: Dynmap-style marker management for squaremap, with icons loaded from URLs and toggleable marker sets.
+depend: [squaremap]
+folia-supported: false
+
+commands:
+  marker:
+    description: Manage squaremap markers and marker sets.
+    usage: /marker <subcommand>
+    aliases: [squaremarker]
+    permission: squaremarkers.admin
+
+permissions:
+  squaremarkers.admin:
+    description: Allows management of SquareMarkerZ markers and marker sets.
+    default: op

@@ -1,0 +1,55 @@
+# SquareMarkerZ configuration
+
+default-set:
+  id: markers
+  label: "Markers"
+
+icons:
+  # Width/height (in pixels) icons are shown at on the map, and the size downloaded icons are resized to.
+  size: 16
+  max-download-size-kb: 512
+  connect-timeout-seconds: 5
+  read-timeout-seconds: 5
+
+# Defaults applied to newly created marker sets (via /marker set create). Existing sets are unaffected.
+layer-defaults:
+  hidden-by-default: false
+  show-controls: true
+  priority: 5
+  z-index: 5
+
+messages:
+  # If true, messages are parsed as MiniMessage (e.g. "<green>text</green>"). If false, '&' legacy color codes are used.
+  minimessage: false
+  prefix: "&8[&bSquareMarkerZ&8]&r "
+  no-permission: "&cYou do not have permission to use this command."
+  player-only: "&cThis command can only be used by a player."
+  unknown-subcommand: "&cUnknown subcommand. Run /marker for a list of commands."
+  invalid-id: "&cInvalid id '&f%id%&c'. Use only a-z, 0-9, _ and - (max 32 characters)."
+  marker-id-taken: "&cA marker with id '&f%id%&c' already exists."
+  marker-not-found: "&cNo marker found with id '&f%id%&c'."
+  set-not-found: "&cNo marker set found with id '&f%id%&c'."
+  set-id-taken: "&cA marker set with id '&f%id%&c' already exists."
+  set-default-protected: "&cThe default marker set cannot be deleted."
+  set-move-same: "&cThe target set must be different from the current set."
+  icon-required: "&cAn icon URL is required (the target set has no default icon)."
+  icon-invalid-url: "&cOnly http:// and https:// URLs are supported."
+  icon-download-failed: "&cFailed to load icon: %reason%"
+  world-not-found: "&cWorld '&f%world%&c' not found."
+  invalid-number: "&cExpected a number but got '&f%value%&c'."
+  marker-created: "&aCreated marker '&f%id%&a' in set '&f%set%&a'."
+  marker-removed: "&aRemoved marker '&f%id%&a'."
+  marker-moved: "&aMoved marker '&f%id%&a' to your location."
+  marker-moved-to: "&aMoved marker '&f%id%&a' to %world% (%x%, %y%, %z%)."
+  marker-moveset: "&aMoved marker '&f%id%&a' to set '&f%set%&a'."
+  marker-label-set: "&aUpdated the label of marker '&f%id%&a'."
+  marker-icon-set: "&aUpdated the icon of marker '&f%id%&a'."
+  marker-desc-set: "&aUpdated the description of marker '&f%id%&a'."
+  set-created: "&aCreated marker set '&f%id%&a'."
+  set-deleted: "&aDeleted marker set '&f%id%&a' and its markers."
+  set-deleted-moved: "&aDeleted marker set '&f%id%&a', moving its markers to '&f%target%&a'."
+  set-delete-confirm: "&eThis will permanently delete set '&f%id%&e' and %count% marker(s). Run &f/marker set delete %id% confirm&e within 30s to confirm, or use &f--moveto <set>&e to relocate the markers instead."
+  set-delete-expired: "&cThat confirmation is not pending or has expired. Run the delete command again."
+  set-updated: "&aUpdated marker set '&f%id%&a'."
+  reload-complete: "&aSquareMarkerZ reloaded: config, %sets% set(s), %markers% marker(s)."
+  console-needs-world: "&cConsole must specify a world; use /marker addat."
